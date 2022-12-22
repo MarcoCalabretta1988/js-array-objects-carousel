@@ -166,13 +166,16 @@ const data = [
 
 //pulsanti controllo Autoplay
 startButton.addEventListener('click', ()=>{
-
+     startButton.disabled = true;
+     stopButton.disabled = false;
      rotate = setInterval (()=>{
         changeImg('next');
        },3000);
 });
 
 stopButton.addEventListener('click', ()=>{
+    startButton.disabled = false;
+    stopButton.disabled = true;
     clearInterval (rotate);
 });
 
