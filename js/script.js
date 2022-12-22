@@ -99,6 +99,8 @@ const data = [
 
   const gallery = document.querySelector('.gallery');
   const thumbnails = document.querySelector('.thumbnails');
+  const startButton = document.getElementById('start');
+  const stopButton = document.getElementById('stop');
 
   //Inizializzo valori
   let galleryContent = `
@@ -158,10 +160,18 @@ const data = [
   });
 
  // Cambio img ogni tot tempo
-  setInterval (()=>{
+ let rotate = setInterval (()=>{
     changeImg('next');
    },3000);
 
 
+startButton.addEventListener('click', ()=>{
+     rotate = setInterval (()=>{
+        changeImg('next');
+       },3000);
+});
 
+stopButton.addEventListener('click', ()=>{
+    clearInterval (rotate);
+});
 

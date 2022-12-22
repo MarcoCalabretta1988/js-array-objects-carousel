@@ -103,3 +103,25 @@ body{
 .selected{
     border: 2px solid blue;
 }
+
+/* BUTTON  */
+
+.change-control-button{
+    text-align: center;
+    margin: 50px;
+}
+
+.change-control-button button{
+    padding: 5px 15px;
+    background-color: green;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.change-control-button #stop {
+    background-color: brown;
+}
