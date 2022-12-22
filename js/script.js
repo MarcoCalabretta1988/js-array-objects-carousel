@@ -59,3 +59,69 @@ const data = [
       text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
   ];
+
+  //? RECUPERO ELEMENTI DAL DOM
+
+  const gallery = document.querySelector('.gallery');
+
+  let galleryContent = `
+  <i class="fa-solid fa-arrow-left" id="prev"></i>
+  <i class="fa-solid fa-arrow-right" id="next"></i>
+  `;
+
+  data.forEach(element =>{
+    galleryContent +=  `
+    <img src="${element.image}" alt="${element.title}">
+    <h1>${element.title}</h1>
+    <p> ${element.text}</p>
+    `
+  });
+
+  gallery.innerHTML = galleryContent;
+
+  //Recupero gli elementi inseriti nel dom
+  const image = document.querySelectorAll('.gallery img');
+  const title = document.querySelectorAll('.gallery h1');
+  const text = document.querySelectorAll('.gallery p');
+  //recupero pulsanti
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+
+  //Metto i primi elementi in visibilità
+
+  let actualActiveIndex = 0;
+  image[actualActiveIndex].classList.add('active');
+  text[actualActiveIndex].classList.add('active');
+  title[actualActiveIndex].classList.add('active');
+
+  console.log(image);
+
+  next.addEventListener('click' , () => {
+    image[actualActiveIndex].classList.remove('active');
+    text[actualActiveIndex].classList.remove('active');
+  title[actualActiveIndex].classList.remove('active');
+    actualActiveIndex++
+     if(actualActiveIndex === image.length){
+        actualActiveIndex = 0;
+     }
+    image[actualActiveIndex].classList.add('active');
+    text[actualActiveIndex].classList.add('active');
+   title[actualActiveIndex].classList.add('active');
+  });
+
+  prev.addEventListener('click' , () => {
+    image[actualActiveIndex].classList.remove('active');
+    text[actualActiveIndex].classList.remove('active');
+  title[actualActiveIndex].classList.remove('active');
+    actualActiveIndex--;
+    if(actualActiveIndex < 0){
+        actualActiveIndex = image.length - 1;
+     }
+    image[actualActiveIndex].classList.add('active');
+    text[actualActiveIndex].classList.add('active');
+   title[actualActiveIndex].classList.add('active');
+  });
+
+
+
+

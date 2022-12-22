@@ -18,3 +18,60 @@
 body{
     font-family: sans-serif;
 }
+
+
+.gallery .active{
+    display: inline-block;
+}
+
+
+/* SECTION CAROUSEL */
+
+.gallery {
+    height: 400px;
+    width: 1000px;
+    overflow: hidden;
+    margin-top: 100px;
+    position: relative;
+    color: white;
+}
+
+.gallery img{
+    max-width: 100%;
+    display: none;
+}
+
+.gallery .fa-solid{
+    background-color: azure;
+    cursor: pointer;
+    font-size: 50px;
+    position: absolute;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    padding: 5px;
+    color: blue;
+}
+.gallery .fa-arrow-left{
+    top : 50%;
+    left : 3%;
+}
+
+.gallery .fa-arrow-right{
+    top : 50%;
+    right : 3%;
+}
+
+.gallery h1{
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    display: none;
+}
+
+.gallery p{
+    position: absolute;
+    bottom: 35px;
+    right: 10px;
+    left: 300px;
+    display: none;
+}
