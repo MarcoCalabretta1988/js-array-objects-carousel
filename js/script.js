@@ -103,11 +103,11 @@ const data = [
   const stopButton = document.getElementById('stop');
 
   //Inizializzo valori
-  let galleryContent = `
-  <i class="fa-solid fa-arrow-left" id="prev"></i>
-  <i class="fa-solid fa-arrow-right" id="next"></i>
+  let galleryContent = '';
+  let thumbnailsContent =`
+  <i class="fa-solid fa-arrow-up" id="prev"></i>
+  <i class="fa-solid fa-arrow-down" id="next"></i>
   `;
-  let thumbnailsContent ='';
  //Preparo elmenti da inserire in pagina
   data.forEach(element =>{
     galleryContent +=  `

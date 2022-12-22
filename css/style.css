@@ -38,7 +38,7 @@ body{
     height: 400px;
     width: 1000px;
     overflow: hidden;
-    position: relative;
+   position: relative;
     color: white;
     border-radius: 30px;
 }
@@ -49,26 +49,6 @@ body{
     display: none;
 }
 
-.gallery .fa-solid{
-    background-color: azure;
-    cursor: pointer;
-    font-size: 50px;
-    position: absolute;
-    transform: translateY(-50%);
-    border-radius: 10px;
-    border: 1px solid black;
-    padding: 5px;
-    color:black;
-}
-.gallery .fa-arrow-left{
-    top : 50%;
-    left : 3%;
-}
-
-.gallery .fa-arrow-right{
-    top : 50%;
-    right : 3%;
-}
 
 .gallery h1{
     position: absolute;
@@ -92,7 +72,7 @@ body{
 .thumbnails{
     display: flex;
     flex-direction: column;
-   
+    position: relative;
 }
 
 .thumbnails img{
@@ -102,9 +82,32 @@ body{
     border-radius: 20px;
 }
 
+.thumbnails .fa-solid{
+    background-color: azure;
+    cursor: pointer;
+    font-size: 25px;
+    position: absolute;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 5px;
+    color:black;
+}
+
+
+.thumbnails .fa-arrow-up{
+    top : 2%;
+    left : 50%;
+}
+
+.thumbnails .fa-arrow-down{
+    bottom : 3%;
+    left : 50%;
+}
+
 .selected{
     border: 3px solid greenyellow;
- 
+    
 }
 
 /* BUTTON  */
@@ -112,6 +115,7 @@ body{
 .change-control-button{
     text-align: center;
     margin: 50px;
+    
 }
 
 .change-control-button button{
