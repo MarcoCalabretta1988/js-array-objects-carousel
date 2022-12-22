@@ -157,6 +157,11 @@ const data = [
     changeImg('prev');
   });
 
+ // Cambio img ogni tot tempo
+  setInterval (()=>{
+    changeImg('next');
+   },3000);
+
 
 
 
