@@ -66,6 +66,8 @@ const data = [
         image[actualActiveIndex].classList.remove('active');
         text[actualActiveIndex].classList.remove('active');
         title[actualActiveIndex].classList.remove('active');
+        thumbnailsImage[actualActiveIndex].classList.remove('selected');
+
         if (target === 'next'){
            actualActiveIndex++
            if(actualActiveIndex === image.length){
@@ -78,10 +80,16 @@ const data = [
                 actualActiveIndex = image.length - 1;
              }
         }
+        else{
+            
+            actualActiveIndex = target;
+            
+        }
 
         image[actualActiveIndex].classList.add('active');
         text[actualActiveIndex].classList.add('active');
         title[actualActiveIndex].classList.add('active');
+        thumbnailsImage[actualActiveIndex].classList.add('selected');
 
     }
  
@@ -90,27 +98,45 @@ const data = [
   //? RECUPERO ELEMENTI DAL DOM
 
   const gallery = document.querySelector('.gallery');
+  const thumbnails = document.querySelector('.thumbnails');
 
+  //Inizializzo valori
   let galleryContent = `
   <i class="fa-solid fa-arrow-left" id="prev"></i>
   <i class="fa-solid fa-arrow-right" id="next"></i>
   `;
-
+  let thumbnailsContent ='';
+ //Preparo elmenti da inserire in pagina
   data.forEach(element =>{
     galleryContent +=  `
     <img src="${element.image}" alt="${element.title}">
     <h1>${element.title}</h1>
     <p> ${element.text}</p>
     `
+    thumbnailsContent +=  `
+    <img src="${element.image}" alt="${element.title}">`
   });
 
+  // innesto html nel dom
   gallery.innerHTML = galleryContent;
+  thumbnails.innerHTML = thumbnailsContent;
 
   //Recupero gli elementi inseriti nel dom
   const image = document.querySelectorAll('.gallery img');
   const title = document.querySelectorAll('.gallery h1');
   const text = document.querySelectorAll('.gallery p');
-  
+  const thumbnailsImage = document.querySelectorAll('.thumbnails img');
+
+  //rendo i thumbnails cliccabili
+
+  thumbnailsImage.forEach((element,i)=>{
+   
+    element.addEventListener('click', ()=> {
+        changeImg(i);
+    });
+
+  });
+
   //recupero pulsanti
   const prev = document.getElementById('prev');
   const next = document.getElementById('next');
@@ -121,6 +147,7 @@ const data = [
   image[actualActiveIndex].classList.add('active');
   text[actualActiveIndex].classList.add('active');
   title[actualActiveIndex].classList.add('active');
+  thumbnailsImage[actualActiveIndex].classList.add('selected');
 
   next.addEventListener('click' , () => {
     changeImg('next');
