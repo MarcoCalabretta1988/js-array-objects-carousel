@@ -75,6 +75,7 @@ body{
     bottom: 100px;
     right: 50px;
     display: none;
+    text-shadow: 2px 2px black;
 }
 
 .gallery p{
@@ -83,6 +84,7 @@ body{
     right: 10px;
     left: 300px;
     display: none;
+    text-shadow: 2px 2px black;
 }
 
 /* THUMBNAILS */
@@ -101,7 +103,8 @@ body{
 }
 
 .selected{
-    border: 2px solid blue;
+    border: 3px solid greenyellow;
+ 
 }
 
 /* BUTTON  */
@@ -120,6 +123,7 @@ body{
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    text-shadow: 2px 2px black;
 }
 
 .change-control-button #stop {

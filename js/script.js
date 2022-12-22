@@ -159,13 +159,14 @@ const data = [
     changeImg('prev');
   });
 
- // Cambio img ogni tot tempo
+ // Autoplay
  let rotate = setInterval (()=>{
     changeImg('next');
    },3000);
 
-
+//pulsanti controllo Autoplay
 startButton.addEventListener('click', ()=>{
+
      rotate = setInterval (()=>{
         changeImg('next');
        },3000);
