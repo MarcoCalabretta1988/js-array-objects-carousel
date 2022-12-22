@@ -60,6 +60,33 @@ const data = [
     }
   ];
 
+  //todo FUNZIONI ------------------------------------------
+
+    const changeImg = target =>{
+        image[actualActiveIndex].classList.remove('active');
+        text[actualActiveIndex].classList.remove('active');
+        title[actualActiveIndex].classList.remove('active');
+        if (target === 'next'){
+           actualActiveIndex++
+           if(actualActiveIndex === image.length){
+           actualActiveIndex = 0;
+           }
+        }
+        else if (target === 'prev'){
+            actualActiveIndex--;
+            if(actualActiveIndex < 0){
+                actualActiveIndex = image.length - 1;
+             }
+        }
+
+        image[actualActiveIndex].classList.add('active');
+        text[actualActiveIndex].classList.add('active');
+        title[actualActiveIndex].classList.add('active');
+
+    }
+ 
+
+
   //? RECUPERO ELEMENTI DAL DOM
 
   const gallery = document.querySelector('.gallery');
@@ -83,6 +110,7 @@ const data = [
   const image = document.querySelectorAll('.gallery img');
   const title = document.querySelectorAll('.gallery h1');
   const text = document.querySelectorAll('.gallery p');
+  
   //recupero pulsanti
   const prev = document.getElementById('prev');
   const next = document.getElementById('next');
@@ -94,32 +122,12 @@ const data = [
   text[actualActiveIndex].classList.add('active');
   title[actualActiveIndex].classList.add('active');
 
-  console.log(image);
-
   next.addEventListener('click' , () => {
-    image[actualActiveIndex].classList.remove('active');
-    text[actualActiveIndex].classList.remove('active');
-  title[actualActiveIndex].classList.remove('active');
-    actualActiveIndex++
-     if(actualActiveIndex === image.length){
-        actualActiveIndex = 0;
-     }
-    image[actualActiveIndex].classList.add('active');
-    text[actualActiveIndex].classList.add('active');
-   title[actualActiveIndex].classList.add('active');
+    changeImg('next');
   });
 
   prev.addEventListener('click' , () => {
-    image[actualActiveIndex].classList.remove('active');
-    text[actualActiveIndex].classList.remove('active');
-  title[actualActiveIndex].classList.remove('active');
-    actualActiveIndex--;
-    if(actualActiveIndex < 0){
-        actualActiveIndex = image.length - 1;
-     }
-    image[actualActiveIndex].classList.add('active');
-    text[actualActiveIndex].classList.add('active');
-   title[actualActiveIndex].classList.add('active');
+    changeImg('prev');
   });
 
 
