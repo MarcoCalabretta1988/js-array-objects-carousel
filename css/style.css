@@ -52,6 +52,7 @@ body{
     max-width: 100%;
     min-height: 100%;
     display: none;
+    object-fit: cover;
 }
 
 
@@ -87,6 +88,7 @@ body{
     max-height: 80px;
     cursor: pointer;
     border-radius: 20px;
+    object-fit: cover;
 }
 
 .thumbnails .fa-solid{
