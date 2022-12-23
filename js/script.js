@@ -92,6 +92,12 @@ const data = [
         thumbnailsImage[actualActiveIndex].classList.add('selected');
 
     }
+
+    const autoPlay = () =>{
+       rotate = setInterval (()=>{
+        changeImg('next');
+       },3000);
+    }
  
 
 
@@ -160,17 +166,14 @@ const data = [
   });
 
  // Autoplay
- let rotate = setInterval (()=>{
-    changeImg('next');
-   },3000);
+ let rotate;
+  autoPlay();
 
 //pulsanti controllo Autoplay
 startButton.addEventListener('click', ()=>{
      startButton.disabled = true;
      stopButton.disabled = false;
-     rotate = setInterval (()=>{
-        changeImg('next');
-       },3000);
+     autoPlay();
 });
 
 stopButton.addEventListener('click', ()=>{
